@@ -1,0 +1,74 @@
+.main{
+    width: 100vw;
+    /* height: 100vh; */
+    color: black;
+}
+.heading{
+    color:black;
+    font-size:30px;
+    font-family: bold;
+    display: flex;
+    justify-content:space-around;
+    margin: 10px;
+    float: right;
+}
+.search{
+    display: flex;
+}
+.addicon{
+    color: black;
+    font-size:28px;
+}
+.mainone{
+   display: flex;
+   gap:20px;
+   flex-wrap: wrap;
+   width: 100vw;
+}
+.cards{
+    box-shadow:0 12.5px 10px rgba(0,0,0,0.035),0 100px 80px rgba(0,0,0,0.07);
+    height: 250px;
+    width: 250px;
+  background-color:rgb(175, 187, 216);
+  color: black;
+  border-radius: 20px; 
+  padding: 15px;
+  margin: 40px;
+  /* margin-left: 20px; */
+}
+.taskname{
+    font-size: large;
+}
+.taskname1{
+    color: rgb(11, 3, 171);
+    font-size: larger;
+    font-family: bold;
+}
+.taskname2{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 200px;
+    color: black;
+}
+.time{
+    display: flex;
+    gap: 10px;
+}
+.description{
+    font-size: large;
+}
+.description1{
+    color: blue;
+    font-size: larger;
+    font-family: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.description2{
+    height: 50px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.clock{
+    color:blue ;
+}

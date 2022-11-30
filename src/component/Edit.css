@@ -1,0 +1,13 @@
+.addingpage{
+    background-color: rgb(160, 144, 121);
+    width:550px;
+    display: flex;
+    align-items: center;
+    justify-content: 'center';
+    margin: 50px auto;
+    padding: 20px;
+}
+.heading1{
+    margin-top: 10px;
+    margin-left: 10px;
+}

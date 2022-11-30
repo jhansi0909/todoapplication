@@ -1,0 +1,27 @@
+.viewpage{
+    background-color: blanchedalmond;
+    width: 50%;
+    margin: 30px auto;
+   /* padding: 10px; */
+}
+.names{
+    color: blue;
+    font-size: 25px;
+    padding: 10px;
+}
+.name{
+    padding: 10px;
+    line-break: anywhere;
+    font-size: 20px;
+}
+.display{
+    display: flex;
+    gap: 30px;
+}
+.edit{
+    float: right;
+}
+.heading1{
+    display: flex;
+    justify-content: center;
+}
