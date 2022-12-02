@@ -55,7 +55,7 @@ function Edit(){
    <center><Typography variant="h5" className="heading1">Edit The Details Of The Task</Typography></center> <br/>
    <form>
         <TextField style={{"width":"500px","margin":"5px"}} type="text" label="Task Name" defaultValue={location.state.Taskname} onChange={handleName}></TextField><br/>
-        <TextField style={{"width":"500px","margin":"5px" }} type="date" label=" "  variant="outlined" defaultValue={location.state.Date} onChange={handleDate}></TextField><br/>
+        <TextField style={{"width":"500px","margin":"5px" }} type="date" label="date "  variant="outlined" defaultValue={location.state.Date} onChange={handleDate}></TextField><br/>
         <TextField style={{"width":"500px","margin":"5px" }} type="Time" label=" "  variant="outlined" defaultValue={location.state.Time}  onChange={handleTime}></TextField><br/>
         <TextField style={{"width":"500px","margin":"5px","cols":"40", "rows":"5"}} orientation="vertical" defaultValue={location.state.Description} multiline="true" type="text" label="Description"  variant="outlined"  onChange={handleDescription}></TextField><br/>
         <div className="buttons">  <Button style={{ backgroundColor: "black",}} onClick={()=>{

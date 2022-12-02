@@ -1,16 +1,37 @@
-import React from "react";
-import {useNavigate, useLocation} from "react-router-dom";
+import React, { useEffect } from "react";
+import {useNavigate, useLocation, useParams} from "react-router-dom";
 import { useState } from "react";
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import { Button } from '@mui/material';
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
 import "./View.css";
+import { getDatabase, ref, child, get } from "firebase/database";
+
 function View(){
     const Navigate=useNavigate()
     const location=useLocation();
-    const[data,setData]=useState(location.state)
-    console.log(location)
+    const router=useParams();
+    const dbRef = ref(getDatabase());
+    const taskName=router.Viewid;
+    // console.log("task name is",taskName)
+    // console.log("location is",location)
+    const[data,setData]=useState(null)
+    // console.log(location)
+    useEffect(()=>{
+        get(child(dbRef, `adddata/${taskName}`))
+          .then((snapshot) => {
+            if (snapshot.exists()) {
+              setData(snapshot.val());
+              console.log(snapshot.val());
+            } else {
+              console.log("No data available");
+            }
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+    },[])
     function Edit(obj){
         Navigate("/Edit",{state:obj})
         console.log("heloo")
@@ -22,7 +43,12 @@ function View(){
     }
     return(
       <div className="viewpage">
-        <div className="heading1"><h3>More Details about Task</h3></div>
+        {
+            data!=null?<div>
+              data
+            </div>:<div>Loading....</div>
+        }
+        {/* <div className="heading1"><h3>More Details about Task</h3></div>
         <div className="edit"  onClick={()=>{
           Edit(data)
       }}><ModeEditIcon></ModeEditIcon></div>
@@ -45,7 +71,7 @@ function View(){
         <div className="deletebutton">
         <Button style={{backgroundColor:"black",margin:"20px"}} variant="contained" onClick={()=>{
             Delete(data)
-        }}>Delete</Button></div>
+        }}>Delete</Button></div> */}
     </div>
     )
 }

@@ -14,8 +14,8 @@ function Firstpage(){
      console.log("helooo")
    }
    function Call(obj,index){
-    Navigate("/View/"+index,{state:obj})
-    console.log("you clicked"+ index,obj)
+    Navigate("/View/"+obj.Taskname)
+    // console.log("you clicked"+ index,obj)
    }
    useEffect(() => {
     axios.get('https://todoapplication-c90f0-default-rtdb.firebaseio.com//adddata.json').then((response) =>{
