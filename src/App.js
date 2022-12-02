@@ -6,6 +6,7 @@ import Firstpage from './component/Firstpage';
 import Add from './component/Add';
 import View from './component/View';
 import Edit from './component/Edit';
+import { getDatabase, ref, set } from "firebase/database";
 function App() {
   return (
     <div>

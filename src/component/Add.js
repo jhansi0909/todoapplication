@@ -4,8 +4,11 @@ import React, { useState } from "react";
 import { useNavigate} from "react-router-dom";
 import { Button } from '@mui/material';
 import axios from 'axios';
+import { getDatabase, ref, set } from "firebase/database";
 import "./Add.css";
 function Add(){
+   console.log(getDatabase);
+   const db = getDatabase();
     const[taskname,setTaskname]=useState("")
     const[time,setTime]=useState("")
     const[date,setDate]=useState("")
@@ -39,11 +42,14 @@ function Add(){
             Description:description,
             Key:key,
         }
-        axios.post('https://todoapplication-c90f0-default-rtdb.firebaseio.com//adddata.json',x).then(()=>{
-            alert("submitted successfully");
-            Navigate("/Firstpage")
-        });
-        setData(x)
+        // axios.post('https://todoapplication-c90f0-default-rtdb.firebaseio.com//adddata.json',x).then(()=>{
+        //     alert("submitted successfully");
+        //     Navigate("/Firstpage")
+        // });
+        set(ref(db, 'adddata/' + taskname),x);
+        // alert("submited successfully");
+        // Navigate("/Firstpage")
+        // setData(x)
     }
    return(
 <div>
