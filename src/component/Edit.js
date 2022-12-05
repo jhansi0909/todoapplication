@@ -75,7 +75,7 @@ function Edit(){
                       }).then((result) => {
                         if (result.isConfirmed) {
                           Swal.fire('Saved!', '', 'success')
-                          
+                          Navigate("/Firstpage")
                         } else if (result.isDenied) {
                           Swal.fire('Changes are not saved', '', 'info')
                         }

@@ -77,7 +77,10 @@ function View(){
              <div className="heading1"><h3>More Details about Task</h3></div>
         <div className="edit"  onClick={()=>{
           Edit(data)
-      }}><ModeEditIcon></ModeEditIcon></div>
+      }}>
+      <Button style={{backgroundColor:"black",height:"30px"}} variant="contained">Edit</Button>
+      <ModeEditIcon></ModeEditIcon>
+      </div>
       <div>
         <div className="names">Task name:</div>
         <div className="name"> {data.Taskname}</div>

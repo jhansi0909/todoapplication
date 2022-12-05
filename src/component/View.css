@@ -20,6 +20,8 @@
 }
 .edit{
     float: right;
+    padding: 10px;
+    display: flex;
 }
 .heading1{
     display: flex;
