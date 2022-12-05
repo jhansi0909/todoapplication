@@ -16,7 +16,7 @@ function App() {
       <Route  path="/Add" element={<Add></Add>}></Route>
       {/* <Route  path="/View" element={<View></View>}></Route> */}
         <Route path='/View/:Viewid' element={<View></View>}></Route>
-        <Route  path="/Edit" element={<Edit></Edit>}></Route>
+        <Route  path="/Edit/:Viewid" element={<Edit></Edit>}></Route>
      </Routes>
     </div>
   );

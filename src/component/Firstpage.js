@@ -5,6 +5,7 @@ import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOu
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import { Button, TextField } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 import axios from "axios";
 function Firstpage(){
   const Navigate=useNavigate();
@@ -13,9 +14,9 @@ function Firstpage(){
      Navigate("/Add")
      console.log("helooo")
    }
-   function Call(obj,index){
-    Navigate("/View/"+index,{state:obj})
-    console.log("you clicked"+ index,obj)
+   function Call(obj){
+    Navigate("/View/"+obj.Taskname)
+    // console.log("you clicked"+ index,obj)
    }
    useEffect(() => {
     axios.get('https://todoapplication-c90f0-default-rtdb.firebaseio.com//adddata.json').then((response) =>{
@@ -30,11 +31,16 @@ function Firstpage(){
   },[])
     return(
         <div className="main">
-          <div className="heading">TO DO TASK</div>
+          <div className="navbar">
+            <div className="menuicon"><MenuIcon></MenuIcon></div>
+            <div className="heading">TO DO TASK</div>
+          </div>
+        <div className="searching">
           <div className="search">
-         <TextField style={{"width":"400px"}} type="text" label="Search"></TextField><br/>
+         <TextField style={{"width":"700px"}} type="text" label="Search"></TextField><br/>
          <Button style={{ backgroundColor: "black","height":"40px",margin:"10px"}} variant="contained" onClick={Add}>Add Tasks</Button>
           </div>
+          </div> 
   <div className="mainone">
   {
  data.map((x,index)=>{
