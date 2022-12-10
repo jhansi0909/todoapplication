@@ -9,12 +9,14 @@ import { getDatabase, ref, child, get,set } from "firebase/database";
 import Swal from 'sweetalert2';
 import MenuIcon from '@mui/icons-material/Menu';
 function Edit(){
+  const Navigate=useNavigate()
     const location=useLocation();
     const db = getDatabase();
     const[taskname,setTaskname]=useState("")
     const[time,setTime]=useState("")
     const[date,setDate]=useState("")
     const[description,setDescription]=useState("")
+    const [complete,setComplete]=useState()
     const dbRef = ref(getDatabase());
     const router=useParams();
     const taskName=router.Viewid;
@@ -64,6 +66,7 @@ function Edit(){
                     Date:date,
                     Time:time,
                     Description:description,
+                    Status:false
                 }
                 set(ref(db, 'adddata/' +taskName),x).then(() => {
                     Swal.fire({
@@ -74,10 +77,13 @@ function Edit(){
                         denyButtonText: `Don't save`,
                       }).then((result) => {
                         if (result.isConfirmed) {
-                          Swal.fire('Saved!', '', 'success')
-                          Navigate("/Firstpage")
+                          Swal.fire('Saved!', '', 'success').then((e)=>{
+                            Navigate("/Firstpage")
+                        }) 
                         } else if (result.isDenied) {
-                          Swal.fire('Changes are not saved', '', 'info')
+                          Swal.fire('Changes are not saved', '', 'info').then((e)=>{
+                            Navigate("/Firstpage")
+                        }) 
                         }
                       })
                   })
@@ -95,12 +101,12 @@ function Edit(){
    <Container  className="adding">
   {
     data?<div>
-       <center><Typography variant="h5" className="heading1">Edit The Details Of The Task</Typography></center> <br/>
+       <center><Typography className="editheading"><h2>Edit The Details Of The Task</h2></Typography></center> <br/>
    <form>
-        <TextField style={{"width":"500px","margin":"5px"}} type="text" label="Task Name" variant="outlined" defaultValue={data.Taskname} onChange={handleName}></TextField><br/>
-        <TextField style={{"width":"500px","margin":"5px" }} type="date" label=" "  variant="outlined" defaultValue={data.Date} onChange={handleDate}></TextField><br/>
-        <TextField style={{"width":"500px","margin":"5px" }} type="Time" label=" "  variant="outlined" defaultValue={data.Time}  onChange={handleTime}></TextField><br/>
-        <TextField style={{"width":"500px","margin":"5px","cols":"40", "rows":"5"}} orientation="vertical" defaultValue={data.Description} multiline="true" type="text" variant="outlined"  onChange={handleDescription}></TextField><br/>
+        <TextField style={{"width":"90%","margin":"5px"}} type="text" label="Task Name" variant="outlined" defaultValue={data.Taskname} onChange={handleName}></TextField><br/>
+        <TextField style={{"width":"90%","margin":"5px" }} type="date" label=" "  variant="outlined" defaultValue={data.Date} onChange={handleDate}></TextField><br/>
+        <TextField style={{"width":"90%","margin":"5px" }} type="Time" label=" "  variant="outlined" defaultValue={data.Time}  onChange={handleTime}></TextField><br/>
+        <TextField style={{"width":"90%","margin":"5px","cols":"40", "rows":"5"}} orientation="vertical" defaultValue={data.Description} multiline="true" type="text" variant="outlined"  onChange={handleDescription}></TextField><br/>
         <div className="buttons"><Button style={{ backgroundColor: "black",}} onClick={()=>{
             Save()
         }} variant="contained">Save</Button>

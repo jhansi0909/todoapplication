@@ -1,14 +1,21 @@
 .addingpage{
-    background-color: rgb(160, 144, 121);
-    width:550px;
+    /* background-color: rgb(160, 144, 121); */
+    background-color:rgb(175, 187, 216);
     display: flex;
-    align-items: center;
+    width: 50%;
+    /* align-items: center; */
     justify-content: 'center';
-    margin: 50px auto;
-    padding: 20px;
+    /* margin: 50px auto; */
+    /* padding: 20px; */
     border-radius: 10px;
 }
-.heading1{
-    margin-top: 10px;
-    margin-left: 10px;
+/* @media screen and (min-width: 400px) {
+.addingpage{
+    width: 85%;
 }
+} */
+.editheading{
+    display: flex;
+    justify-content: center;
+    /* font-size: 10px; */
+ }

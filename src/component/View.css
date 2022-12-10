@@ -1,12 +1,23 @@
 .viewpage{
-    background-color: blanchedalmond;
+    /* background-color: blanchedalmond; */
+    /* background-color: rgb(160, 144, 121); */
+    background-color:rgb(175, 187, 216);
     width: 50%;
     margin: 30px auto;
+    padding:30px;
+    border-radius: 20px;
    /* padding: 10px; */
 }
+/* @media screen and (min-width: 414px) {
+.viewpage{
+width: 85%;
+}
+} */
 .names{
-    color: blue;
-    font-size: 25px;
+    color:blue;
+    font-size: 30px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* color: black; */
     padding: 10px;
 }
 .name{
@@ -20,10 +31,15 @@
 }
 .edit{
     float: right;
-    padding: 10px;
     display: flex;
+    gap: 10px;
 }
-.heading1{
+.viewheading{
+    display: flex;
+    justify-content: center;
+    /* font-size: 15px; */
+ }
+.backbutton{
     display: flex;
     justify-content: center;
 }

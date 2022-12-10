@@ -38,12 +38,12 @@ function Add(){
         console.log(description)
     }
    async function Add(){
-        var x={
+         var x={
             Taskname:taskname,
             Date:date,
             Time:time,
             Description:description,
-            Key:key,
+            Status:false,
         }
         // axios.post('https://todoapplication-c90f0-default-rtdb.firebaseio.com//adddata.json',x).then(()=>{
         //     alert("submitted successfully");
@@ -68,16 +68,19 @@ function Add(){
     </div>
     <div className="addingpage">
    <Container  className="adding">
-   <center><Typography variant="h5" className="heading1">Add The Details Of The Task</Typography></center> <br/>
-   <form>
-        <TextField style={{"width":"500px","margin":"5px"}} type="text" label="Task Name"  onChange={handleName} ></TextField><br/>
-        <TextField style={{"width":"500px","margin":"5px" }} type="date" label=""  variant="outlined"  onChange={handleDate}></TextField><br/>
-        <TextField style={{"width":"500px","margin":"5px" }} type="Time" label=" "  variant="outlined"  onChange={handleTime}></TextField><br/>
-        <TextField style={{"width":"500px","margin":"5px","cols":"40", "rows":"5"}} orientation="vertical" multiline="true" type="text" label="Description"  variant="outlined"  onChange={handleDescription}></TextField><br/>
+   <center><Typography  className="headings"><h2>Add The Details Of The Task</h2></Typography></center> <br/>
+   <div className="textfield">
+   <form className="textfield">
+        <TextField style={{"width":"90%","margin":"5px"}} type="text" label="Task Name"  onChange={handleName} ></TextField><br/>
+        <TextField style={{"width":"90%","margin":"5px" }} type="date" label=""  variant="outlined"  onChange={handleDate}></TextField><br/>
+        <TextField style={{"width":"90%","margin":"5px" }} type="Time" label=" "  variant="outlined"  onChange={handleTime}></TextField><br/>
+        <TextField style={{"width":"90%","margin":"5px","cols":"40", "rows":"5"}} orientation="vertical" multiline="true" type="text" label="Description"  variant="outlined"  onChange={handleDescription}></TextField><br/>
+        {/* <TextField style={{"width":"500px","margin":"5px" }} type=" " label=" "  variant="outlined"  onChange={handleStatus}></TextField><br/> */}
         <div className="buttons"> 
         <Button style={{ backgroundColor: "black"}} onClick={Add} variant="contained">Add</Button>
         </div>
     </form>
+    </div>
    </Container>
    </div>
 </div>

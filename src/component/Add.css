@@ -7,18 +7,23 @@
     margin: 50px auto;
     padding: 20px;
 }
-.heading1{
-    margin-top: 10px;
-    margin-left: 10px;
-}
 .buttons{
     display: flex;
-    width: 500px;
-    justify-content:space-between;
+    /* width: 500px; */
+    justify-content:center;
     /* background-color: aqua; */
 }
 .adding{
     display: flex;
     align-items: center;
 }
+.headings{
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+ }
+ .textfeild{
+    display: flex;
+    justify-content: center;
+ }
 
